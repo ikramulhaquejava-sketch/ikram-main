@@ -56,14 +56,14 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Slideshow -->
+    <!-- Hero Section with Slideshow (fixed) -->
     <section class="hero">
         <div class="hero-slideshow">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1680714401711-cfb7758cf88b?w=1600')"></div>
-            <div class="slide" style="background-image: url('https://github.com/ikramulhaquejava-sketch/ikram-main/blob/main/image4.jpg')"></div>
-            <div class="slide" style="background-image: url('https://github.com/ikramulhaquejava-sketch/ikram-main/blob/main/image1.jpg')"></div>
-            <div class="slide" style="background-image: url('https://github.com/ikramulhaquejava-sketch/ikram-main/blob/main/image2.jpg')"></div>
-            <div class="slide" style="background-image: url('https://github.com/ikramulhaquejava-sketch/ikram-main/blob/main/image3..jpg')"></div>
+            <img src="https://images.unsplash.com/photo-1680714401711-cfb7758cf88b?w=1600" alt="Slide 1" class="slide active">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1600" alt="Slide 2" class="slide">
+            <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=1600" alt="Slide 3" class="slide">
+            <img src="https://images.unsplash.com/photo-1570042225831-d98af1eb4c1f?w=1600" alt="Slide 4" class="slide">
+            <img src="https://images.unsplash.com/photo-1607623473853-3da8ab64b70a?w=1600" alt="Slide 5" class="slide">
         </div>
         <div class="hero-overlay"></div>
         <div class="container">
@@ -200,23 +200,27 @@
         document.addEventListener('click', function(event) {
             const nav = document.getElementById('navLinks');
             const btn = document.querySelector('.mobile-menu-btn');
-            if (!nav.contains(event.target) && !btn.contains(event.target)) {
+            if (nav && btn && !nav.contains(event.target) && !btn.contains(event.target)) {
                 nav.classList.remove('active');
             }
         });
 
-        // Hero Slideshow
-        const slides = document.querySelectorAll('.hero-slideshow .slide');
-        let currentSlide = 0;
+        // Wait for the DOM to be fully loaded before starting the slideshow
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slideshow .slide');
+            if (slides.length === 0) return; // No slides found
 
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
+            let currentSlide = 0;
 
-        // Change slide every 5 seconds
-        setInterval(nextSlide, 5000);
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            // Change slide every 5 seconds
+            setInterval(nextSlide, 5000);
+        });
     </script>
 </body>
 </html>
