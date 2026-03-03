@@ -56,8 +56,15 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Slideshow -->
     <section class="hero">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1680714401711-cfb7758cf88b?w=1600')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1600')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1559847844-5315695dadae?w=1600')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1570042225831-d98af1eb4c1f?w=1600')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1607623473853-3da8ab64b70a?w=1600')"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
@@ -108,15 +115,7 @@
                 <p class="section-subtitle">Premium buffalo meat products for global markets</p>
             </div>
             <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://customer-assets.emergentagent.com/job_meat-processing-hub/artifacts/6lqd7hmr_TANDON%20OF%20BUFFALOW%20LEG..jpg" alt="NO.1 MEENG">
-                    </div>
-                    <div class="product-info">
-                        <h3>NO.1 MEENG</h3>
-                        <p>Premium Buffalo Leg Tendon</p>
-                    </div>
-                </div>
+                <!-- OMASUM first -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://customer-assets.emergentagent.com/job_meat-processing-hub/artifacts/bigiopd7_OMASUM.jpg" alt="OMASUM">
@@ -126,6 +125,17 @@
                         <p>Buffalo Stomach</p>
                     </div>
                 </div>
+                <!-- NO.1 MEENG second -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://customer-assets.emergentagent.com/job_meat-processing-hub/artifacts/6lqd7hmr_TANDON%20OF%20BUFFALOW%20LEG..jpg" alt="NO.1 MEENG">
+                    </div>
+                    <div class="product-info">
+                        <h3>NO.1 MEENG</h3>
+                        <p>Premium Buffalo Leg Tendon</p>
+                    </div>
+                </div>
+                <!-- CHEEK MEAT third -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://customer-assets.emergentagent.com/job_meat-processing-hub/artifacts/8wlsp1ie_CHEEK%20MEAT.jpg" alt="CHEEK MEAT">
@@ -194,6 +204,19 @@
                 nav.classList.remove('active');
             }
         });
+
+        // Hero Slideshow
+        const slides = document.querySelectorAll('.hero-slideshow .slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
