@@ -40,21 +40,24 @@
         "sameAs": [
             "https://youtube.com",
             "https://facebook.com",
-            "https://x.com"
+            "https://linkedin.com"
         ],
         "description": "Buffalomeat exporter from India, based in Moradabad. Halal certified, APEDA registered, HACCP compliant.",
         "priceRange": "$$"
     }
     </script>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wghlt@400;500&display=swap" rel="stylesheet">
+    <!-- Corrected font weight variable -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <!-- Anti-inspect script (external, minified) -->
     <script src="anti-inspect.js" defer></script>
 </head>
 <body>
-    <!-- Top Contact Bar (unchanged) -->
+    <!-- Top Contact Bar with social icons -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-content">
@@ -69,9 +72,15 @@
                     </a>
                 </div>
                 <div class="social-links">
-                    <a href="https://youtube.com" target="_blank" class="social-link">YouTube</a>
-                    <a href="https://facebook.com" target="_blank" class="social-link">Facebook</a>
-                    <a href="https://x.com" target="_blank" class="social-link">X</a>
+                    <a href="https://youtube.com" target="_blank" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -150,7 +159,7 @@
         </div>
     </section>
 
-    <!-- Featured Products (unchanged, but alt text improved) -->
+    <!-- Featured Products (unchanged) -->
     <section class="featured-products">
         <div class="container">
             <div class="section-header">
